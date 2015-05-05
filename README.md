@@ -20,3 +20,5 @@ Note: seeing as we're doing this agile, we're taking the simplest possible model
 First implementation: As a player, so that I can prepare for the game, I would like to place a ship in a board location.
 
 Second implementation: As a player, so that I can play a more interesting game, I would like to have a range of ship sizes to choose from.
+
+Third implementation: As a player, so that I can create a layout of ships to fox my opponent, I would like to be able to choose the direction my ships face in.
