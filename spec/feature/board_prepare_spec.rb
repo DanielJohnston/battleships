@@ -14,6 +14,19 @@ feature 'as a player preparing for the game' do
     (3..6).each do |index|
       expect(board.check_coords(3, index)).to eq(:ship)
     end
+  end
+
+  scenario 'placing ships outside of the board produces error' do
+
+    board = Board.new(20,20)
+
+    expect { board.place_ship(18, 10 , 5, :right) }.to raise_error 'Off the board!'
+    expect { board.place_ship(3, 16 , 5, :down) }.to raise_error 'Off the board!'
+    expect { board.place_ship(-3, 5, 5, :right) }.to raise_error 'Off the board!'
+    expect { board.place_ship(3, 15, 5, :down) }.not_to raise_error
+    expect { board.place_ship(18, 10, 2, :right) }.not_to raise_error
+    expect { board.place_ship(0, 0, 5, :right) }.not_to raise_error
 
   end
+
 end
