@@ -16,3 +16,7 @@ Interactions:
 * Check if selected board locations are storing a ship
 
 Note: seeing as we're doing this agile, we're taking the simplest possible model to begin with and implementing that, then adding complexity.
+
+First implementation: As a player, so that I can prepare for the game, I would like to place a ship in a board location.
+
+Second implementation: As a player, so that I can play a more interesting game, I would like to have a range of ship sizes to choose from.
