@@ -28,4 +28,15 @@ describe Board do
     expect { subject.place_ship(2, 8, 4, :right) }.to raise_error 'Overlap!'
   end
 
+  it 'returns :miss when firing at a co-ordinate with no ship on it' do
+    subject.place_ship(2, 2, 3, :right)
+    # Fire at a blank co-ordinate, return :miss
+    expect(subject.fire_at(1,2)).to eq(:miss)
+  end
+  it 'returns :hit when firing at a co-ordinate with a ship on it' do
+    subject.place_ship(2, 2, 3, :right)
+    # Fire at a ship-containing co-ordinate, return :hit
+    expect(subject.fire_at(4,2)).to eq(:hit)
+  end
+
 end

@@ -39,4 +39,16 @@ class Board
     @grid[[x, y]]
   end
 
+  def fire_at(x, y)
+    if @grid[[x, y]] == :ship
+      @grid[[x, y]] = :hit
+    elsif @grid[[x, y]] == :hit
+      #not written yet as requires unit test
+    elsif @grid[[x, y]] == :miss
+      #awaiting unit test to write
+    elsif @grid[[x, y]] == nil
+      @grid[[x, y]] = :miss
+    end
+  end
+
 end

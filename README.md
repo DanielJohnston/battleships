@@ -27,3 +27,5 @@ Third implementation: As a player, so that I can create a layout of ships to fox
 Fourth implementation: As a player, so that I can have a coherent game, I would like ships to be constrained on the board.
 
 Fifth implementation: As a player, so that I can have a coherent game, I would like ships to be constrained not to overlap
+
+Sixth implementation: As a player, so that I can win the game, I would like to be able to fire at my opponents board
