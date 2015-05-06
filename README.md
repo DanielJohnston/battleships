@@ -25,3 +25,5 @@ Second implementation: As a player, so that I can play a more interesting game, 
 Third implementation: As a player, so that I can create a layout of ships to fox my opponent, I would like to be able to choose the direction my ships face in.
 
 Fourth implementation: As a player, so that I can have a coherent game, I would like ships to be constrained on the board.
+
+Fifth implementation: As a player, so that I can have a coherent game, I would like ships to be constrained not to overlap

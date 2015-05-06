@@ -20,7 +20,12 @@ describe Board do
 
   it 'raises error when placing a ship out of bounds' do
     #This is *very* reliant on the default sizes set in let statement above
-    expect { subject.place_ship(13, 10, 5, :right) }.to raise_error 'Off the board!'
+    expect { subject.place_ship(13, 10, 3, :right) }.to raise_error 'Off the board!'
+  end
+
+  it 'raises error when placing ships on top of each other' do
+    subject.place_ship(5, 5, 5, :down)
+    expect { subject.place_ship(2, 8, 4, :right) }.to raise_error 'Overlap!'
   end
 
 end

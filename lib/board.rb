@@ -14,6 +14,9 @@ class Board
       # Check that the proposed squares are available
       fail 'Off the board!' if y > @height
       fail 'Off the board!' if x+length > @width
+      (0..length-1).each do |i|
+        fail 'Overlap!' if @grid[[x+i, y]] == :ship
+      end
       # Place ship in each of the proposed squares
       (0..length-1).each do |i|
         @grid[[x+i, y]] = :ship
@@ -22,6 +25,9 @@ class Board
       # Check that the proposed squares are available
       fail 'Off the board!' if x > @width
       fail 'Off the board!' if y+length > @height
+      (0..length-1).each do |i|
+        fail 'Overlap!' if @grid[[x, y+i]] == :ship
+      end
       # Place ship in each of the proposed squares
       (0..length-1).each do |i|
         @grid[[x, y+i]] = :ship

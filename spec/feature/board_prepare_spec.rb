@@ -29,4 +29,13 @@ feature 'as a player preparing for the game' do
 
   end
 
+  scenario 'placing ships on top of each other produces error' do
+
+    board = Board.new(20,20)
+
+    board.place_ship(5, 5, 5, :down)
+    expect { board.place_ship(2, 8, 4, :right) }.to raise_error 'Overlap!'
+
+  end
+
 end
