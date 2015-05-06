@@ -31,3 +31,5 @@ Fifth implementation: As a player, so that I can have a coherent game, I would l
 Sixth implementation: As a player, so that I can win the game, I would like to be able to fire at my opponents board
 
 Seventh implementation: As a player, so that I know when to finish playing, I would like to know when I have won or lost
+
+Eighth implementation: As a player, so that I can consider my next shot, I would like an overview of my hits and misses so far

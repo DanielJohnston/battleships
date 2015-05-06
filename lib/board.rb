@@ -55,4 +55,8 @@ class Board
     not(@grid.has_value?(:ship))
   end
 
+  def enemy_status
+    @grid.select { |key, value| value == :hit or value == :miss }
+  end
+
 end
