@@ -33,10 +33,19 @@ describe Board do
     # Fire at a blank co-ordinate, return :miss
     expect(subject.fire_at(1,2)).to eq(:miss)
   end
+  
   it 'returns :hit when firing at a co-ordinate with a ship on it' do
     subject.place_ship(2, 2, 3, :right)
     # Fire at a ship-containing co-ordinate, return :hit
     expect(subject.fire_at(4,2)).to eq(:hit)
+  end
+
+  it 'returns .won == true when all ships sunk on a board' do
+    subject.place_ship(2, 2, 3, :right)
+    subject.fire_at(2, 2)
+    subject.fire_at(3, 2)
+    subject.fire_at(4, 2)
+    expect(subject.won?).to be(true)
   end
 
 end

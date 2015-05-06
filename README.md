@@ -29,3 +29,5 @@ Fourth implementation: As a player, so that I can have a coherent game, I would 
 Fifth implementation: As a player, so that I can have a coherent game, I would like ships to be constrained not to overlap
 
 Sixth implementation: As a player, so that I can win the game, I would like to be able to fire at my opponents board
+
+Seventh implementation: As a player, so that I know when to finish playing, I would like to know when I have won or lost

@@ -51,4 +51,8 @@ class Board
     end
   end
 
+  def won?
+    not(@grid.has_value?(:ship))
+  end
+
 end
