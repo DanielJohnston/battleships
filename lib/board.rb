@@ -6,6 +6,7 @@ class Board
     @height = height
   end
 
+
   def place_ship(x, y, length, direction)
 
     fail 'Off the board!' if x<0 || y<0
@@ -40,12 +41,11 @@ class Board
   end
 
   def fire_at(x, y)
+    fail 'Off the board!' if x < 0 || y<0 || x>@width || y>@width
     if @grid[[x, y]] == :ship
       @grid[[x, y]] = :hit
-    elsif @grid[[x, y]] == :hit
-      #not written yet as requires unit test
-    elsif @grid[[x, y]] == :miss
-      #awaiting unit test to write
+    elsif @grid[[x, y]] == :hit || @grid[[x, y]] == :miss
+      fail 'Already fired at!'
     elsif @grid[[x, y]] == nil
       @grid[[x, y]] = :miss
     end

@@ -16,6 +16,8 @@ Interactions:
 * Check if selected board locations are storing a ship
 * Check if selected board location is within the board area
 
+## Implemented user stories to date
+
 Note: seeing as we're doing this agile, we're taking the simplest possible model to begin with and implementing that, then adding complexity.
 
 First implementation: As a player, so that I can prepare for the game, I would like to place a ship in a board location.
@@ -33,3 +35,7 @@ Sixth implementation: As a player, so that I can win the game, I would like to b
 Seventh implementation: As a player, so that I know when to finish playing, I would like to know when I have won or lost
 
 Eighth implementation: As a player, so that I can consider my next shot, I would like an overview of my hits and misses so far
+
+## In-progress user stories
+
+Ninth implementation: As a player, so that I can play against a human opponent, I would like to play a two-player game

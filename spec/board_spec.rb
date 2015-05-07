@@ -40,6 +40,15 @@ describe Board do
     expect(subject.fire_at(4,2)).to eq(:hit)
   end
 
+  it 'raises error when firing at a co-ordinate previously fired on' do
+    subject.fire_at(4,4)
+    expect { subject.fire_at(4,4) }.to raise_error 'Already fired at!'
+  end
+
+  it 'raises error when firing at a co-ordinate off the board' do
+    expect { subject.fire_at(30,30) }.to raise_error 'Off the board!'
+  end
+
   it 'returns .won == true when all ships sunk on a board' do
     subject.place_ship(2, 2, 3, :right)
     subject.fire_at(2, 2)
