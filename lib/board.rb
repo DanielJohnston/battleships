@@ -27,7 +27,7 @@ class Board
       fail 'Off the board!' if x > @width
       fail 'Off the board!' if y+length > @height
       (0..length-1).each do |i|
-        fail 'Overlap!' if @grid[[x, y+i]] == :ship
+        fail 'Overlap!' if @grid[[x, y+i]] == :ship #has_key !!!!!!!!!
       end
       # Place ship in each of the proposed squares
       (0..length-1).each do |i|
@@ -36,8 +36,32 @@ class Board
     end
   end
 
-  def check_coords(x, y)
-    @grid[[x, y]]
+  def check_coords(x, y)#, length=1, direction=:right)
+    # if block_given?
+    #
+    #
+    # else
+    #   @grid[[x, y]]
+    #
+    # end
+    #
+    #
+    # if length > 1
+    #   results = Array.new
+    #   if direction == :right
+    #     (0..length-1).each do |i|
+    #       results << code_block.call(x+i,y)
+    #     end
+    #   elsif direction == :down
+    #     (0..length-1).each do |i|
+    #       results << code_block.call(x,y+i)
+    #     end
+    #   end
+    #   return results
+    # else
+    #   code_block.call(x,y)
+    # end
+    @grid[[x,y]]
   end
 
   def fire_at(x, y)
@@ -57,6 +81,10 @@ class Board
 
   def enemy_status
     @grid.select { |key, value| value == :hit or value == :miss }
+  end
+
+  def friend_status
+    @grid
   end
 
 end

@@ -35,3 +35,34 @@ feature 'as a player playing the game' do
   end
 
 end
+
+
+feature 'as two players playing a game' do
+
+  scenario 'create two boards, set up ships, take shots and view own and enemy status' do
+
+    player1 = Player.new
+    player2 = Player.new
+
+    player1.board.place_ship(1,1,player1.ships[0],:right)
+    player1.board.place_ship(2,2,player1.ships[1],:down)  
+
+    player2.board.place_ship(3,3,player2.ships[4],:right)
+    player2.board.place_ship(4,4,player2.ships[5],:down)
+
+    player1.board.fire_at(1,1)
+    player1.board.fire_at(3,3)
+
+    player2.board.fire_at(2,2)
+    player2.board.fire_at(4,4)
+
+    expect(player1.board.enemy_status).to eq {ABOUT TWO THINGS}
+    expect(player1.board.friend_status).to eq {SOMETHING HUGE}
+
+    expect(player2.board.enemy_status).to eq {TWO THINGS}
+    expect(player2.board.friend_status).to eq {SOMETHING HUGE}
+
+
+  end
+
+end
